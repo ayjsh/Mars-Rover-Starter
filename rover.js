@@ -22,7 +22,7 @@ class Rover {
                if (this.mode === "NORMAL") {
                   this.position = command.value;
                   results.push({completed: true});
-               } else if (this.mode === "LOW_POWER") {
+               } else if (this.mode === "LOW_POWER") {          
                   results.push({completed: false});
               }
             }

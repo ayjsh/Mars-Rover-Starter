@@ -55,6 +55,7 @@ describe("Rover class", function() {
       generatorWatts: rover.generatorWatts,
     }
     expect(response.results[0]).toStrictEqual({"completed": true});
+    expect(roverStatus.mode).toStrictEqual("LOW_POWER");
   });
   // Test 12
   it("responds with a false completed value when attempting to move in LOW_POWER mode", function() {
@@ -68,6 +69,7 @@ describe("Rover class", function() {
         generatorWatts: rover.generatorWatts,
       };
       expect(response.results[1]).toStrictEqual({ completed: false });
+      expect(rover.position).toStrictEqual(98382);
   });
   // Test 13
   it("responds with the position for the move command", function() {
